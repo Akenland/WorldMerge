@@ -1,0 +1,34 @@
+# WorldMerge by Kyle Nanakdewa
+# Configuration
+
+# Thank you for using WorldMerge! See my other plugins at http://akenland.com/plugins
+
+# Don't change the formatting of this file, or Bukkit will complain. To reset this config to default, just delete it.
+# We recommend using VS Code (https://code.visualstudio.com/) to modify this file, as it will help you with formatting.
+# Do NOT use tabs (tab indent) - use spaces. VS Code will automatically insert spaces, but other text editors won't.
+
+# Full documentation can be found at http://akenland.com/plugins/worldmerge
+# After editing this file, use "/worldmerge reload" to load your changes into the server.
+
+
+# The world that changes will be merged into. This world will be permanently modified!
+target-world: merged_world
+
+# The image file to use. The colours in this image determine which source world to merge from.
+# This image must be inside the plugin folder (inside "plugins/WorldMerge"), same place as this config.
+map-image-file: map.png
+
+# The offset to use for the image, relative to the game world.
+# If left at 0, the image will be placed with its corner at 0,0.
+# Change this to where you want the TOP LEFT (northwest) corner of the image to be, on the game world.
+offset:
+  x: 0
+  z: 0
+
+# The color mappings to use.
+# Use the format "0x00RRGGBB: source_world_name", where RRGGBB are color hex codes (HTML color codes),
+# and source_world_name is a valid world on the server, which will be merged into the target world.
+color-mappings:
+  0x00FF0000: red_world
+  0x0000FF00: green_world
+  0x000000FF: blue_world

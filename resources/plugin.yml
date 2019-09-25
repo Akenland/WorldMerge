@@ -1,0 +1,13 @@
+name: WorldMerge
+version: 1.0
+description: Akenland Gameplay Testing
+author: Kyle Nanakdewa
+website: http://Akenland.com/plugins
+
+main: com.kylenanakdewa.worldmerge.WorldMergePlugin
+
+commands:
+  worldmerge:
+    description: Start a merge, or reload the config
+    permission: worldmerge.admin
+    usage: /worldmerge [version/start/reload]
