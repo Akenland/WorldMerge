@@ -134,6 +134,7 @@ public class WorldMergePlugin extends JavaPlugin {
      * Gets the color of a specified pixel on the image, using game world X/Z
      * values. This will use the offset.
      */
+    @SuppressWarnings("unused")
     private Color getPixelColorFromGame(int x, int z) {
         x -= xOffset;
         z -= zOffset;
@@ -253,6 +254,9 @@ public class WorldMergePlugin extends JavaPlugin {
                     break;
                 }
             }
+
+            // Save at end of each row
+            targetWorld.save();
         }
 
         getLogger().info("Merge complete. "+mergeCount+" columns merged, "+mergeSkippedCount+" columns skipped, "+mergeFailedCount+" columns failed.");
