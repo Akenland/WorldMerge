@@ -38,7 +38,10 @@ public class WorldMergePlugin extends JavaPlugin {
     private int zOffset;
 
     /** The color mappings to use for merging. */
-    Map<Color, World> colorMappings;
+    private Map<Color, World> colorMappings;
+
+    /** Whether to save the world after each row is completed. */
+    private boolean saveWorldPeriodically;
 
 
     @Override
@@ -67,6 +70,7 @@ public class WorldMergePlugin extends JavaPlugin {
         loadImageFile();
         loadImageOffset();
         loadColorMappings();
+        saveWorldPeriodically = getConfig().getBoolean("save-world-periodically", false);
     }
 
     /** Load the target world. */
@@ -212,6 +216,7 @@ public class WorldMergePlugin extends JavaPlugin {
             BlockData newData = sourceBlocks[gameY];
 
             Block block = targetWorld.getBlockAt(gameX, gameY, gameZ);
+            block.setType(newData.getMaterial());
             block.setBlockData(newData, false);
         }
 
@@ -255,8 +260,10 @@ public class WorldMergePlugin extends JavaPlugin {
                 }
             }
 
+            getLogger().info("Merged row "+x+" of "+image.getWidth()+". "+(x/image.getWidth()+"% complete."));
+
             // Save at end of each row
-            targetWorld.save();
+            if(saveWorldPeriodically) targetWorld.save();
         }
 
         getLogger().info("Merge complete. "+mergeCount+" columns merged, "+mergeSkippedCount+" columns skipped, "+mergeFailedCount+" columns failed.");

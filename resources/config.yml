@@ -32,3 +32,8 @@ color-mappings:
   0x00FF0000: red_world
   0x0000FF00: green_world
   0x000000FF: blue_world
+
+# Whether to save the world after each row is merged.
+# This can help recover an incomplete merge, in the event of a server crash,
+# but merges may take longer, and interrupted merges could result in a corrupted world.
+save-world-periodically: false
