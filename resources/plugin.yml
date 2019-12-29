@@ -4,6 +4,7 @@ description: Akenland Gameplay Testing
 author: Kyle Nanakdewa
 website: http://Akenland.com/plugins
 
+api-version: 1.14
 main: com.kylenanakdewa.worldmerge.WorldMergePlugin
 
 commands:
